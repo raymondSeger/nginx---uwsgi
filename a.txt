@@ -1,0 +1,17 @@
+======
+UWSGI + NGINX 
+======
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install build-essential (GCC)
+sudo apt-get install python2.7-dev (to install uwsgi)
+sudo apt-get install python-setuptools
+sudo easy_install pip
+sudo pip install uwsgi
+sudo apt-get install tree
+sudo apt-get install nginx
+sudo nginx -t (to test)
+test uwsgi with "sudo uwsgi --http :80 --wsgi-file test.py --master --processes 4 --threads 2"
+
+sudo uwsgi --http :80 --wsgi-file /var/www/mooimom_django/mooimom_django/wsgi.py --master --processes 4 --threads 2
+sudo uwsgi --http :80 --chdir /var/www/mooimom_django/mooimom_django/ --wsgi-file foobar.py --master --processes 4 --threads 2
